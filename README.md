@@ -37,5 +37,62 @@ api/v1/posts/{post_id}/comments/ (GET, POST): получаем список вс
 api/v1/posts/{post_id}/comments/{comment_id}/ (GET, PUT, PATCH, DELETE): получаем, редактируем или удаляем комментарий по id у поста с id=post_id.
 api/v1/follow/ (GET, POST): получаем список подписок, подписываемся на пользователя. Анонимные запросы запрещены.
 ```
+### Примеры запросов:
+**Получить список всех публикаций:**
+```
+GET .../api/v1/posts/
+```
+**Ответ:**
+```JSON
+{
+    "count": 123,
+    "next": "http://api.example.org/accounts/?offset=400&limit=100",
+    "previous": "http://api.example.org/accounts/?offset=200&limit=100",
+    "results": [
+        {}
+    ]
+}
+```
+**Добавление новой публикации. Анонимные запросы запрещены:**
+```
+POST .../api/v1/posts/
+```
+```JSON
+{
+    "text": "string",
+    "image": "string",
+    "group": 0
+}
+```
+**Ответ:**
+```JSON
+{
+    "id": 0,
+    "author": "string",
+    "text": "string",
+    "pub_date": "2019-08-24T14:15:22Z",
+    "image": "string",
+    "group": 0
+}
+```
+**Частичное обновление комментария к публикации по id. Обновить комментарий может только автор комментария. Анонимные запросы запрещены:**
+```
+PATCH .../api/v1/posts/{post_id}/comments/{id}/
+```
+```JSON
+{
+    "text": "string",
+}
+```
+**Ответ:**
+```JSON
+{
+    "id": 0,
+    "author": "string",
+    "text": "string",
+    "created": "2019-08-24T14:15:22Z",
+    "post": 0
+}
+```
 ### Автор
 [Селезнев Василий](https://github.com/Seleznev808)
