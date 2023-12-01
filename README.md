@@ -16,7 +16,7 @@ python -m venv venv
 source venv/Scripts/activate
 pip install -r requirements.txt
 ```
-Создаnm файл .env в директории yatube_api/, внесnb в него необходимые значения:
+Создать файл .env в директории yatube_api/, внести в него необходимые значения:
 ```
 SECRET_KEY='ваш секретный ключ'
 ```
