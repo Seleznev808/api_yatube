@@ -110,5 +110,11 @@ PATCH .../api/v1/posts/{post_id}/comments/{id}/
     "post": 0
 }
 ```
+
+### Технологии
+
+* Django 3.2.16
+* Django REST framework 3.14.2
+
 ### Автор
 [Селезнев Василий](https://github.com/Seleznev808)
